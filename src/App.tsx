@@ -6,6 +6,44 @@ import { FaNpm } from "react-icons/fa"
 import { HiOutlineMagnifyingGlassCircle } from "react-icons/hi2"
 import { TbLoader2 } from "react-icons/tb"
 
+type SearchResult = {
+	package: {
+	  name: string;
+	  version: string;
+	  description?: string;
+	  links: {
+		npm?: string;
+		homepage?: string;
+		repository?: string;
+		bugs?: string;
+	  };
+	  author?: {
+		name: string;
+		email?: string;
+		url?: string;
+	  };
+	  publisher: {
+		username: string;
+		email: string;
+	  };
+	  maintainers: Array<{
+		username: string;
+		email: string;
+	  }>;
+	};
+	score: {
+	  final: number;
+	  detail: {
+		quality: number;
+		popularity: number;
+		maintenance: number;
+	  };
+	};
+	searchScore: number;
+  };
+  
+
+
 const NpmSearch = () => {
 	const scrollClass: string =
 		"[&::-webkit-scrollbar]:size-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-slate-700 dark:[&::-webkit-scrollbar-thumb]:bg-slate-500"
@@ -54,7 +92,7 @@ const NpmSearch = () => {
 			</div>
 
 			<div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-				{results.map((item, index) => (
+				{results.map((item:SearchResult, index) => (
 					<div
 						key={index}
 						className="flex flex-col rounded-xl border border-t-4 border-t-blue-600 bg-white shadow-sm dark:border-gray-700 dark:border-t-blue-500 dark:bg-slate-900 dark:shadow-slate-700/[.7]"
