@@ -7,7 +7,7 @@ import { useTheme } from "./useTheme"
 // A navbar component that will be used to house app-wide navigation and settings
 export function Navbar() {
 	return (
-		<header className="sticky top-0 z-50 w-full border-b bg-white dark:border-slate-700 dark:bg-slate-900">
+		<header className="sticky top-0 z-50 w-full border-b bg-white dark:border-neutral-700 dark:bg-neutral-900">
 			<div className="flex h-16 items-center px-10 sm:px-16 lg:px-44">
 				<div className="mx-auto w-full max-w-3xl space-y-20">
 					<div className="flex justify-between">
@@ -17,7 +17,7 @@ export function Navbar() {
 								className="inline-flex h-10 items-center justify-center text-lg font-bold text-gray-800 dark:text-white"
 								href="/"
 							>
-								Saleh Khader
+								WebApp Idea Pad *wip
 							</a>
 						</div>
 						<div className="flex flex-1 items-center justify-end">
